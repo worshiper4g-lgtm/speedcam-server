@@ -20,7 +20,7 @@ const PORT = process.env.PORT || 3001;
 // data.go.kr → 전국무인교통단속카메라표준데이터 (15028200)
 // 오픈API 신청 후 발급받은 서비스키(Decoding)를 사용합니다.
 const CAMERA_API_URL =
-  "https://apis.data.go.kr/3710000/cameraFormsOfSafety/getCameraList";
+  "http://api.data.go.kr/openapi/tn_pubr_public_unmanned_traffic_camera_api";
 
 // ── 캐시 (30분) ───────────────────────────────────────────────────
 const cache = new NodeCache({ stdTTL: 1800, checkperiod: 300 });

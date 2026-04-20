@@ -9,12 +9,13 @@ const cors      = require("cors");
 const rateLimit = require("express-rate-limit");
 const NodeCache = require("node-cache");
 const https     = require("https");
+const http  = require("http");
 
 const app  = express();
 const PORT = process.env.PORT || 3001;
 
 const CAMERA_API_URL =
-  "https://api.data.go.kr/openapi/tn_pubr_public_unmanned_traffic_camera_api";
+  "http://api.data.go.kr/openapi/tn_pubr_public_unmanned_traffic_camera_api";
 
 const cache = new NodeCache({ stdTTL: 1800 });
 
@@ -34,7 +35,6 @@ function fetchPublicData(url, retries = 3) {
   return new Promise((resolve, reject) => {
     const attempt = (tryCount) => {
       const req = https.get(url, {
-        agent: publicDataAgent,
         headers: {
           "User-Agent": "Mozilla/5.0 (compatible; SpeedCamGuard/1.0)",
           "Accept": "application/json",

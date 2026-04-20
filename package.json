@@ -1,0 +1,21 @@
+{
+  "name": "speedcam-guard-server",
+  "version": "1.0.0",
+  "description": "공공데이터포털 과속카메라 API 프록시 서버",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "axios": "^1.7.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.3.1",
+    "node-cache": "^5.1.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
